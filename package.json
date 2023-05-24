@@ -14,8 +14,6 @@
     },
     "dependencies": {
         "@types/qs": "^6.9.7",
-        "@volverjs/data": "1.0.3-beta.2",
-        "@volverjs/query-vue": "1.0.3-beta.2",
         "@volverjs/style": "0.1.11-beta.1",
         "@volverjs/ui-vue": "0.0.8-beta.7",
         "@vueuse/components": "^10.1.2",

@@ -18,7 +18,26 @@ import {
     type UrlBuilderInstance,
     type UrlBuilderOptions,
 } from './UrlBuilder'
-import type { ParamMap } from './types'
+import { RepositoryHttpReadOptions } from './RepositoryHttp'
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type ParamMap = Record<string, any>
+
+export type HttpClientRequestOptionsWithImmediate = HttpClientRequestOptions & {
+    immediate?: boolean
+}
+export type HttpClientComposableRequestOptions =
+    | HttpClientRequestOptionsWithImmediate
+    | Ref<HttpClientRequestOptionsWithImmediate>
+export type HttpClientComposableInputTemplate =
+    | HttpClientInputTemplate
+    | Ref<HttpClientInputTemplate>
+export type RepositoryHttpReadOptionsWithImmediate =
+    RepositoryHttpReadOptions & {
+        immediate?: boolean
+    }
+export type RepositoryHttpComposableReadOptions =
+    | RepositoryHttpReadOptionsWithImmediate
+    | Ref<RepositoryHttpReadOptionsWithImmediate>
 
 export type HttpClientResponse = KyResponse
 export type HttpClientResponsePromise = ResponsePromise
