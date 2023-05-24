@@ -15,9 +15,6 @@ export const useCharactersStore = defineStore('characters', () => {
         Response<Character>
     >('api/character', { responseAdapter: (response) => response.results })
 
-    /**
-     * fetch characters with fetch API
-     */
     async function fetchCharacters(
         params: ParamMap = {},
         options: RepositoryHttpReadOptions = {},
@@ -25,7 +22,9 @@ export const useCharactersStore = defineStore('characters', () => {
         isLoading.value = true
         const { responsePromise } = charactersRepository.read(params, options)
         const { data, ok } = await responsePromise
-        characters.value = data ?? []
+        if (data?.length) {
+            characters.value = [...characters.value, ...data]
+        }
         hasError.value = !ok
         isLoading.value = false
     }
