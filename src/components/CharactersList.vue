@@ -50,6 +50,6 @@
         default="Default slot content">
         <LocationComponent
             v-if="currentCharacter"
-            :character-id="currentCharacter.id" />
+            :location-url="currentCharacter.location.url" />
     </VvDialog>
 </template>

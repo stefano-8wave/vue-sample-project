@@ -1,26 +1,33 @@
 <script setup lang="ts">
-    import { useRepositoryHttp } from '~/composables/useRepositoryHttp'
     import { Location } from '~/models/Location'
 
     const props = defineProps<{
-        characterId: number
+        locationUrl: string
     }>()
 
     const location: Ref<Location | undefined> = ref()
     const hasError = ref(false)
 
-    watch(
-        () => props.characterId,
-        async (newValue) => {
-            const { repository: locationsRepository } =
-                useRepositoryHttp<Location>('api/location/:id')
-
-            const { responsePromise } = locationsRepository.read({
-                id: newValue,
+    /**
+     * fetch location data using fetch API
+     * no auth token
+     */
+    const fetchLocation = () => {
+        fetch(props.locationUrl)
+            .then((response) => response.json())
+            .catch((e) => {
+                hasError.value = true
+                console.error(e)
             })
-            const { data, ok } = await responsePromise
-            location.value = data?.[0]
-            hasError.value = !ok
+            .then((data) => {
+                location.value = data
+            })
+    }
+
+    watch(
+        () => props.locationUrl,
+        () => {
+            fetchLocation()
         },
         { immediate: true },
     )
