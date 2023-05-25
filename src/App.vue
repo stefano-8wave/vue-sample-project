@@ -6,17 +6,17 @@
     <div class="h-screen w-screen p-lg">
         <header class="flex flex-col items-center theme theme--dark">
             <div class="mb-lg grid grid-cols-2 gap-lg">
-                <a href="https://github.com/volverjs/data" target="_blank">
+                <a href="https://vuejs.org/" target="_blank">
                     <img
                         alt="logo-data"
-                        src="https://raw.githubusercontent.com/volverjs/data/develop/docs/static/volverjs-data.svg"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1920px-Vue.js_Logo_2.svg.png"
                         width="125"
                         height="125" />
                 </a>
-                <a href="https://github.com/volverjs/query-vue" target="_blank">
+                <a href="https://pinia.vuejs.org/" target="_blank">
                     <img
                         alt="logo-query"
-                        src="https://raw.githubusercontent.com/volverjs/query-vue/develop/docs/static/volverjs-query.svg"
+                        src="https://pinia.vuejs.org/logo.svg"
                         width="125"
                         height="125" />
                 </a>

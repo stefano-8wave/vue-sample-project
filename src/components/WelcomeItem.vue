@@ -9,13 +9,9 @@
         <h1 class="mt-5">{{ msg }}</h1>
         <h3>
             Here an example App with
-            <a href="https://github.com/volverjs/data" target="_blank"
-                >@volverjs/data</a
-            >
+            <a href="https://vuejs.org/" target="_blank">Vue</a>
             +
-            <a href="https://github.com/volverjs/query-vue" target="_blank"
-                >@volverjs/query-vue</a
-            >
+            <a href="https://pinia.vuejs.org/" target="_blank">Pinia</a>
         </h3>
     </div>
 </template>
